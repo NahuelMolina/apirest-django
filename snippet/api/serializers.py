@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import mymodel
+from snippet.models import mymodel
 
 # Here is where the models are converted with the serializer class
 

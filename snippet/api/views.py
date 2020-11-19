@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from django.contrib.auth.models import User
 
-from .models import mymodel
+from snippet.models import mymodel
 from .serializers import UserSerializer, mymodel_serializer
 
 
