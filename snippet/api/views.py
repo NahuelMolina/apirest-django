@@ -3,23 +3,23 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 
-from snippet.models import mymodel
+from snippet.models import mymodel, Customer
 from .serializers import UserSerializer, mymodel_serializer
-
+from .serializers import CustomerSerializer
 
 # Here is where the models serializers and the objects created on terms of this models, 
 # are connected
 
-class UserViewSet(viewsets.ViewSet):
+class CustomerViewSet(viewsets.ViewSet):
     def list(self, request):
-        queryset = User.objects.all()
-        serializer = UserSerializer(queryset, many=True)
+        queryset = Customer.objects.all()
+        serializer = CustomerSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        queryset = User.objects.all()
-        user = get_object_or_404(queryset, pk=pk)
-        serializer = UserSerializer(user)
+        queryset = Customer.objects.all()
+        customer = get_object_or_404(queryset, pk=pk)
+        serializer = CustomerSerializer(customer)
         return Response(serializer.data)
 
 class UserViewSet(viewsets.ModelViewSet):
