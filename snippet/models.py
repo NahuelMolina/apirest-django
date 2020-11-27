@@ -7,4 +7,6 @@ class mymodel(models.Model):
 class Customer(models.Model):
         name = models.CharField(max_length = 10)
         nation = models.CharField(max_length = 10)
-        
+        total_trans = models.IntegerField()
+        partial_doubt = models.FloatField()
+        average_revenue = models.FloatField()
